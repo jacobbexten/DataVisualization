@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "description": "Airplane fatalities",
+  "data": {
+      "url": "data/Airplane_Crashes_and_Fatalities.csv",
+      "format": {"parse": {"Date": "utc:'%m/%d/%Y'", "Fatalities": "number"}}
+  },
+  "width": 800,
+  "height": 400,
+  "mark": {
+    "type": "line",
+    "point": false
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": "Years"
+    },
+    "y": {
+      "field": "Fatalities",
+      "type": "quantitative",
+      "title": "Number of Fatalities",
+      "scale": {
+        "zero": false
+      }
+    }
+  }
+}

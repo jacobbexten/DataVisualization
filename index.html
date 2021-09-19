@@ -2,20 +2,21 @@
 <head>
   <meta charset="utf-8">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@5"></script>
 
   <title>A Vega example using aviation fatalities.</title>
 
 </head>
 
-<h5>Hypothesis: Has air travel become safer since the events of 9/11?</h5>
+<h5>Hypothesis: Air travel has become safer in recent years.</h5>
 
 <body>
-<div id="vis"></div>
+<div id="vis_time_series"></div>
 
 <script>
-  const spec = "line.vg.json";
-  vegaEmbed("#vis", spec)
+  const spec_crash_scatter = "scatter.vg.json";
+  vegaEmbed("#vis_time_series", spec_crash_scatter)
     // result.view provides access to the Vega View API
     .then(result => console.log(result))
     .catch(console.warn);
