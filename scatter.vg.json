@@ -5,38 +5,92 @@
       "url": "data/Airplane_Crashes_and_Fatalities.csv"
   },
   "transform": [
-  {
-    "timeUnit": "year", "field": "Date", "as": "sum_fatalities"
-  }
-],
+    {"timeUnit": "year", "field": "Date", "as": "sum_fatalities"},
+    {"filter": {"field": "Fatalities", "valid": true}}
+  ],
   "width": 800,
   "height": 600,
-  "mark": {
-    "type": "line",
-    "point": true,
-    "interpolate": "cardinal",
-    "tension": 1,
-    "strokeWidth": 1,
-    "color": "crimson"
-  },
-  "encoding": {
-    "x": {
-      "field": "sum_fatalities",
-      "type": "temporal",
-      "title": "Year",
-      "timeUnit": "year"
-    },
-    "y": {
-      "field": "Fatalities",
-      "type": "quantitative",
-      "title": "Number of Fatalities",
-      "scale": {
-        "zero": false
+
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "fill": "crimson"
+        },
+        "strokeWidth": 1.5,
+        "color": "crimson",
+        "tooltip": true
       },
-      "aggregate": "sum"
+      "encoding": {
+        "x": {
+          "field": "sum_fatalities",
+          "type": "temporal",
+          "title": "Year",
+          "timeUnit": "year"
+        },
+        "y": {
+          "field": "Fatalities",
+          "type": "quantitative",
+          "title": "Fatalities",
+          "scale": {
+            "zero": false
+          },
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type":"rect",
+        "opacity": 0.3
+      },
+      "data": {
+        "values": [
+          {
+            "start": "1939-09",
+            "end": "1945-09",
+            "Event": "WWII"
+          }
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "timeUnit": "yearmonth"
+        },
+        "x2": {
+          "field": "end",
+          "timeUnit": "yearmonth"
+        },
+        "color": {"field": "Event", "type": "nominal", "scale": {"range": ["purple", "lightblue"]}}
+      }
+    },
+    {
+      "mark": {
+        "type":"rect",
+        "opacity": 0.2
+      },
+      "data": {
+        "values": [
+          {
+            "start": "2001-06",
+            "end": "2001-12",
+            "Event": "9/11/2001"
+          }
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "timeUnit": "yearmonth"
+        },
+        "x2": {
+          "field": "end",
+          "timeUnit": "yearmonth"
+        },
+        "color": {"field": "Event", "type": "nominal", "scale": {"range": ["purple", "lightblue"]}}
+      }
     }
-  },
-  "config": {
-    "mark": {"invalid": null}
-  }
+  ]
 }

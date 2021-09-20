@@ -1,30 +1,53 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "2020",
+  "title": {"text": "2009-2019 Aircraft Fatalities", "anchor": "middle"},
   "data": {
-
+    "values": [
+      {"Year": "2009", "Fatality Size": "Under 100 Fatalities", "Amount": 42},
+      {"Year": "2010", "Fatality Size": "Under 100 Fatalities", "Amount": 37},
+      {"Year": "2011", "Fatality Size": "Under 100 Fatalities", "Amount": 35},
+      {"Year": "2012", "Fatality Size": "Under 100 Fatalities", "Amount": 23},
+      {"Year": "2013", "Fatality Size": "Under 100 Fatalities", "Amount": 24},
+      {"Year": "2014", "Fatality Size": "Under 100 Fatalities", "Amount": 18},
+      {"Year": "2015", "Fatality Size": "Under 100 Fatalities", "Amount": 15},
+      {"Year": "2016", "Fatality Size": "Under 100 Fatalities", "Amount": 23},
+      {"Year": "2017", "Fatality Size": "Under 100 Fatalities", "Amount": 14},
+      {"Year": "2018", "Fatality Size": "Under 100 Fatalities", "Amount": 13},
+      {"Year": "2019", "Fatality Size": "Under 100 Fatalities", "Amount": 8},
+      {"Year": "2009", "Fatality Size": "Over 100 Fatalities", "Amount": 4},
+      {"Year": "2010", "Fatality Size": "Over 100 Fatalities", "Amount": 3},
+      {"Year": "2011", "Fatality Size": "Over 100 Fatalities", "Amount": 0},
+      {"Year": "2012", "Fatality Size": "Over 100 Fatalities", "Amount": 2},
+      {"Year": "2013", "Fatality Size": "Over 100 Fatalities", "Amount": 0},
+      {"Year": "2014", "Fatality Size": "Over 100 Fatalities", "Amount": 4},
+      {"Year": "2015", "Fatality Size": "Over 100 Fatalities", "Amount": 3},
+      {"Year": "2016", "Fatality Size": "Over 100 Fatalities", "Amount": 0},
+      {"Year": "2017", "Fatality Size": "Over 100 Fatalities", "Amount": 1},
+      {"Year": "2018", "Fatality Size": "Over 100 Fatalities", "Amount": 3},
+      {"Year": "2019", "Fatality Size": "Over 100 Fatalities", "Amount": 1}
+    ]
   },
-  "width": {"step": 12},
+  "width": {"step": 32},
   "mark": "bar",
   "encoding": {
     "column": {
-      "field": "Age", "type": "ordinal", "spacing": 10,
+      "field": "Year", "type": "ordinal", "spacing": 10,
       "header": {"orient": "bottom"}
     },
     "y": {
-      "field": "Rate",
+      "field": "Amount",
       "type": "quantitative",
-      "title": "Labor Participation Rate",
+      "title": "Number of Accidents",
       "axis": {"grid": true}
     },
     "x": {
-      "field": "Gender",
+      "field": "Fatality Size",
       "type": "ordinal",
       "axis": null
     },
     "color": {
-      "field": "Gender",
-      "scale": {"range": ["#675193", "#ca8861"]}
+      "field": "Fatality Size",
+      "scale": {"range": ["#ba7b73", "#7398ba"]}
     }
   },
   "config": {
