@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@5"></script>
+  <title>A Vega example using...</title>
+
+</head>
+
+<body>
+<div id="raster"></div>
+<div id="raster_montana"></div>
+
+<script>
+  const spec = "raster.vg.json";
+  vegaEmbed("#raster", spec)
+    .then(result => console.log(result))
+    .catch(console.warn);
+
+  const spec2 = "raster_montana.vg.json";
+  vegaEmbed("#raster_montana", spec2)
+    .then(result => console.log(result))
+    .catch(console.warn);
+</script>
+
+</body>
+</html>

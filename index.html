@@ -1,53 +1,17 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@5"></script>
-  <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
-  <title>A Vega example using aviation fatalities.</title>
-
+  <meta charset="UTF-8">
+  <title>Jacob Bexten Visualizations</title>
 </head>
+<body>
 
-<center>
-<h5>Hypothesis: Airline travel has been safer in recent years due to fewer fatal accidents involving a greater number of people.</h5>
-</center>
+<h5>CSCI 477</h5>
 
-<body style="background-color: white">
-<center>
-<div id="vis_time_series" style="padding-bottom: 40px"></div>
-</center>
+<ul>
+  <li><a href="scatter.html">Scatter</a></li>
+  <li><a href="raster.html">Raster</a></li>
+</ul>
 
-<center>
-<div id="vis_fatality_bar"></div>
-</center>
-
-<center>
-<p style="font-size:8px">
-  Time series data and bar graph data from: <a href="https://www.kaggle.com/cgurkan/airplane-crash-data-since-1908/version/1">https://www.kaggle.com/cgurkan/airplane-crash-data-since-1908/version/1</a></p>
-
-<p style="font-size:8px"><i>
-  Fatalities represents: All civil and commercial aviation accidents of scheduled and non-scheduled passenger airliners worldwide, which resulted in a fatality (including all U.S. Part 121 and Part 135 fatal accidents), All cargo, positioning, ferry and test flight fatal accidents, All military transport accidents with 10 or more fatalities, All commercial and military helicopter accidents with greater than 10 fatalities, All civil and military airship accidents involving fatalities, Aviation accidents involving the death of famous people, Aviation accidents or incidents of noteworthy interest.</i></font></p>
-</center>
-
-<script>
-  const spec_crash_scatter = "scatter.vg.json";
-  vegaEmbed("#vis_time_series", spec_crash_scatter)
-    // result.view provides access to the Vega View API
-    .then(result => console.log(result))
-    .catch(console.warn);
-
-  const spec_crash_bar = "bar.vg.json";
-  vegaEmbed("#vis_fatality_bar", spec_crash_bar)
-    // result.view provides access to the Vega View API
-    .then(result => console.log(result))
-    .catch(console.warn);
-
-  const spec_crash_bar2 = "bar2.vg.json";
-  vegaEmbed("#vis_fatality_bar2", spec_crash_bar2)
-    // result.view provides access to the Vega View API
-    .then(result => console.log(result))
-    .catch(console.warn);
-
-</script>
 </body>
+</html>
