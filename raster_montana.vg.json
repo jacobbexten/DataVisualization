@@ -48,7 +48,7 @@
     },
     {
       "name": "montana",
-      "url": "data/us_map.json"
+      "url": "data/us.json"
     }
   ],
 
