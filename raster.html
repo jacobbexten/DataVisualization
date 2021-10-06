@@ -9,19 +9,22 @@
 </head>
 
 <body>
+
+<center>
+  <h5>The American Indian population percentage in Montana correlates with relativity to reservations.</h5>
+</center>
+
 <div id="raster"></div>
 <div id="raster_montana"></div>
 
+
 <script>
-  const spec = "raster.vg.json";
-  vegaEmbed("#raster", spec)
-    .then(result => console.log(result))
-    .catch(console.warn);
+
 
   const spec2 = "raster_montana.vg.json";
   vegaEmbed("#raster_montana", spec2)
-    .then(result => console.log(result))
-    .catch(console.warn);
+          .then(result => console.log(result))
+          .catch(console.warn);
 </script>
 
 </body>

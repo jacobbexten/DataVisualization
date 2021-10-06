@@ -1,32 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A plot of 2016 annual global precipitation data from the NOAA Climate Forecast System (CFS) v2.",
-  "width": 600,
+  "description": "",
+  "width": 1200,
   "height": 300,
-  "autosize": "fit-x",
+  "autosize": {
+    "type": "fit-x",
+    "resize": false
+  },
 
   "signals": [
+    {
+      "name": "scale", "value": 110,
+      "bind": {"input": "range", "min": 50, "max": 400, "step": 5}
+    },
     {
       "name": "opacity", "value": 0.5,
       "bind": {"input": "range", "min": 0, "max": 1, "step": 0.01}
     },
     {
-      "name": "levels", "value": 6,
-      "bind": {"input": "range", "min": 2, "max": 12, "step": 1}
+      "name": "levels", "value": 3,
+      "bind": {"input": "range", "min": 2, "max": 6, "step": 1}
     },
     {
-      "name": "stop", "value": 3000
+      "name": "stop", "value": 2
     },
     {
       "name": "step",
       "update": "stop / levels"
     }
+
   ],
 
   "data": [
     {
       "name": "population",
-      "url": "data/mtpop.json"
+      "url": "data/montana_native.json"
     },
     {
       "name": "contours",
@@ -40,8 +48,7 @@
     },
     {
       "name": "montana",
-      "url": "data/us.json",
-      "format": {"type": "topojson", "feature": "STATE"}
+      "url": "data/us_map.json"
     }
   ],
 
@@ -57,7 +64,7 @@
       "name": "color",
       "type": "quantize",
       "domain": {"signal": "[0, stop]"},
-      "range": {"scheme": "tealblues", "count": {"signal": "levels"}}
+      "range": {"scheme": "yelloworangered", "count": {"signal": "levels"}}
     }
   ],
 
@@ -109,17 +116,19 @@
 
   "legends": [
     {
-      "title": "1981-2010 Average Total Annual Precipitation (mm)",
+      "title": "2010 American Indian Population (%)",
       "fill": "color",
-      "orient": "bottom",
-      "offset": 5,
+      "orient": "left",
+      "offset": 0,
       "type": "gradient",
-      "gradientLength": 300,
-      "gradientThickness": 12,
+      "direction": "vertical",
+      "gradientLength": 200,
+      "gradientThickness": 10,
       "titlePadding": 10,
       "titleOrient": "left",
-      "titleAnchor": "end",
-      "direction": "horizontal"
+      "titleAnchor": "start",
+      "titleLineHeight": 20,
+      "titleBaseline": "line-bottom"
     }
   ],
 

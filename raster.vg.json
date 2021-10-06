@@ -7,7 +7,7 @@
 
   "signals": [
     {
-      "name": "projection", "value": "naturalEarth1",
+      "name": "projection", "value": "equirectangular",
       "bind": {"input": "select", "options": [
         "azimuthalEqualArea", "equalEarth", "equirectangular",
         "naturalEarth1", "mollweide", "orthographic"
@@ -38,7 +38,7 @@
       "bind": {"input": "range", "min": 2, "max": 12, "step": 1}
     },
     {
-      "name": "stop", "value": 3000
+      "name": "stop", "value": 1000
     },
     {
       "name": "step",
@@ -48,12 +48,12 @@
 
   "data": [
     {
-      "name": "projections",
-      "url": "data/PHIS.json"
+      "name": "seatemp",
+      "url": "data/SURF_SEA_TEMP.json"
     },
     {
       "name": "contours",
-      "source": "projections",
+      "source": "seatemp",
       "transform": [
         {
           "type": "isocontour",
@@ -83,7 +83,7 @@
       "name": "color",
       "type": "quantize",
       "domain": {"signal": "[0, stop]"},
-      "range": {"scheme": "bluepurple", "count": {"signal": "levels"}}
+      "range": {"scheme": "lightmulti", "count": {"signal": "levels"}}
     }
   ],
 
@@ -128,12 +128,12 @@
 
   "legends": [
     {
-      "title": "Annual Precipitation (mm)",
+      "title": "Sea Surface Temperature (C)",
       "fill": "color",
       "orient": "bottom",
       "offset": 5,
       "type": "gradient",
-      "gradientLength": 300,
+      "gradientLength": 400,
       "gradientThickness": 12,
       "titlePadding": 10,
       "titleOrient": "left",
