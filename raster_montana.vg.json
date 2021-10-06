@@ -64,7 +64,7 @@
       "name": "color",
       "type": "quantize",
       "domain": {"signal": "[0, stop]"},
-      "range": {"scheme": "yelloworangered", "count": {"signal": "levels"}}
+      "range": {"scheme": "lightorange", "count": {"signal": "levels"}}
     }
   ],
 
@@ -128,7 +128,8 @@
       "titleOrient": "left",
       "titleAnchor": "start",
       "titleLineHeight": 20,
-      "titleBaseline": "line-bottom"
+      "titleBaseline": "line-bottom",
+      "titleFontSize": 10
     }
   ],
 
