@@ -11,7 +11,7 @@
 <body>
 
 <center>
-  <h5>The American Indian population percentage in Montana correlates with relativity to reservations.</h5>
+  <h4>The American Indian population percentage in Montana correlates with relativity to reservations.</h4>
 </center>
 
 <div id="raster"></div>
@@ -20,7 +20,10 @@
 </center>
 
 <center>
-  <p style="font-size: 8px">The U.S. Census Grids (Summary File 1), 2010 data set contains grids of demographic and socioeconomic data from the year 2010 in ASCII and GeoTIFF formats. The grids have a resolution of 30 arc-seconds (0.0083 decimal degrees), or approximately 1 square km. The gridded variables are based on census block geography from Census 2010 TIGER/Line Files and census variables (population, households, and housing variables).</p>
+  <p style="font-size: 8px">The U.S. Census Grids (Summary File 1), 2010 data set contains grids of demographic and socioeconomic data from the year 2010 in ASCII and GeoTIFF formats. The grids have a resolution of 30 arc-seconds (0.0083 decimal degrees),</p>
+</center>
+<center>
+  <p style="font-size: 8px"> or approximately 1 square km. The gridded variables are based on census block geography from Census 2010 TIGER/Line Files and census variables (population, households, and housing variables).</p>
 </center>
 
 <center>
@@ -31,6 +34,8 @@
 
 
 <script>
+  vega.scheme('custom', ['#FFE485', '#FFB399','#B35656', '#780235']);
+
   const spec2 = "raster_montana.vg.json";
   vegaEmbed("#raster_montana", spec2)
           .then(result => console.log(result))

@@ -10,16 +10,19 @@
 
   "signals": [
     {
-      "name": "scale", "value": 110,
-      "bind": {"input": "range", "min": 50, "max": 400, "step": 5}
+      "name": "scale", "value": 5000
     },
     {
-      "name": "opacity", "value": 0.5,
-      "bind": {"input": "range", "min": 0, "max": 1, "step": 0.01}
+      "name": "opacity", "value": 0.75,
+      "bind": {"input": "range", "min": 0.25, "max": 1, "step": 0.05}
+    },
+    {
+      "name": "backgroundopacity", "value": 0.75,
+      "bind": {"input": "range", "min": 0.4, "max": 1, "step": 0.05}
     },
     {
       "name": "levels", "value": 3,
-      "bind": {"input": "range", "min": 2, "max": 6, "step": 1}
+      "bind": {"input": "range", "min": 2, "max": 4, "step": 1}
     },
     {
       "name": "stop", "value": 2
@@ -42,7 +45,7 @@
       "transform": [
         {
           "type": "isocontour",
-          "thresholds": {"signal": "sequence(0, stop, step)"}
+          "thresholds": {"signal": "sequence(0.0000001, stop, step)"}
         }
       ]
     },
@@ -55,7 +58,10 @@
   "projections": [
     {
       "name": "projection",
-      "type": "albersUsa"
+      "type": "albersUsa",
+      "translate": [1300, 1000],
+      "center": [450, 260],
+      "scale": {"signal": "scale"}
     }
   ],
 
@@ -64,28 +70,29 @@
       "name": "color",
       "type": "quantize",
       "domain": {"signal": "[0, stop]"},
-      "range": {"scheme": "lightorange", "count": {"signal": "levels"}}
+      "range": {"scheme": "custom", "count": {"signal": "levels"}}
     }
   ],
 
   "marks": [
     {
       "type": "shape",
-      "clip": true,
+      "clip": false,
       "from": {
         "data": "montana"
       },
       "encode": {
         "update": {
           "strokeWidth": {
-            "value": 1
+            "value": 2
           },
           "stroke": {
-            "value": "#eee"
+            "value": "#ffffff"
           },
           "fill": {
-            "value": "#ddd"
-          }
+            "value": "#51647d"
+          },
+          "fillOpacity": {"signal": "backgroundopacity"}
         }
       },
       "transform": [
@@ -117,22 +124,21 @@
   "legends": [
     {
       "title": "2010 American Indian Population (%)",
-      "fill": "color",
       "orient": "left",
       "offset": 0,
       "type": "gradient",
       "direction": "vertical",
       "gradientLength": 200,
-      "gradientThickness": 10,
+      "gradientThickness": 25,
       "titlePadding": 10,
       "titleOrient": "left",
-      "titleAnchor": "start",
+      "titleAnchor": "middle",
       "titleLineHeight": 20,
-      "titleBaseline": "line-bottom",
-      "titleFontSize": 10
+      "titleBaseline": "line-top",
+      "titleFontSize": 10,
+      "fill": "color"
     }
   ],
-
   "config": {
     "legend": {"layout": {"anchor": "middle"}}
   }
