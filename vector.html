@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@5"></script>
+    <title>A Vega example using vectors</title>
+
+</head>
+
+<body>
+
+<center>
+    <h4>Hypothesis.</h4>
+</center>
+
+<center>
+    <div id="polis_vector"></div>
+</center>
+
+<center>
+    <p style="font-size: 8px"></p>
+</center>
+<center>
+    <p style="font-size: 8px"></p>
+</center>
+
+<center>
+    <p style="font-size:8px">
+        Data can be found at: <a href=""></a>
+    </p>
+</center>
+
+
+<script>
+    vega.scheme('custom', ['#eaac8b', '#e56b6f','#b56576', '#6d597a', '#355070']);
+
+    const spec = "polis_vector.vg.json";
+    vegaEmbed("#polis_vector", spec)
+        .then(result => console.log(result))
+        .catch(console.warn);
+</script>
+
+</body>
+</html>
