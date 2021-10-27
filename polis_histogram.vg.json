@@ -1,0 +1,162 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A basic bar chart example, with value labels shown upon mouse hover.",
+  "width": 1400,
+  "height": 200,
+  "padding": 5,
+  "data": [
+    {
+      "name": "staseis",
+      "url": "data/polis.csv",
+      "format": {
+        "type": "csv",
+        "staseis": "number"
+      }
+    },
+    {
+      "name": "Region",
+      "url": "data/polis.csv",
+      "format": {
+        "type": "csv",
+        "Region": "number"
+      }
+    }
+  ],
+  "signals": [
+    {
+      "name": "tooltip",
+      "value": {},
+      "on": [
+        {
+          "events": "rect:mouseover",
+          "update": "datum"
+        },
+        {
+          "events": "rect:mouseout",
+          "update": "{}"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {
+        "data": "Region",
+        "field": "Region"
+      },
+      "range": "width",
+      "padding": 0.05,
+      "round": true
+    },
+    {
+      "name": "yscale",
+      "domain": {
+        "data": "staseis",
+        "field": "staseis"
+      },
+      "nice": true,
+      "range": "height"
+    }
+  ],
+  "axes": [
+    {
+      "title": "Region",
+      "orient": "bottom",
+      "scale": "xscale",
+      "labelBaseline": "top",
+      "encode": {
+        "labels": {
+          "update": {
+            "angle": {"value":  -50},
+            "align": {"value": "right"}
+          }
+        }
+      }
+    },
+    {
+      "title": "# of Staseis",
+      "orient": "left",
+      "scale": "yscale"
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "staseis"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "scale": "xscale",
+            "field": "Region"
+          },
+          "width": {
+            "scale": "xscale",
+            "band": 1
+          },
+          "y": {
+            "scale": "yscale",
+            "field": "staseis"
+          },
+          "y2": {
+            "scale": "yscale",
+            "value": 0
+          }
+        },
+        "update": {
+          "fill": {
+            "value": "#007e8a"
+          }
+        },
+        "hover": {
+          "fill": {
+            "value": "#00b4c4"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "bottom"
+          },
+          "fill": {
+            "value": "#333"
+          }
+        },
+        "update": {
+          "x": {
+            "scale": "xscale",
+            "signal": "tooltip.region",
+            "band": 0.5
+          },
+          "y": {
+            "scale": "yscale",
+            "signal": "tooltip.staseis",
+            "offset": -2
+          },
+          "text": {
+            "signal": "tooltip.staseis"
+          },
+          "fillOpacity": [
+            {
+              "test": "datum === tooltip",
+              "value": 0
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

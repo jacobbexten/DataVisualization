@@ -20,8 +20,8 @@
       "update": "[mapWidth / 2, mapHeight / 2]"
     },
     {
-      "name": "ColorAs",
-      "value": "Democracy",
+      "name": "Category",
+      "value": "staseis",
       "bind": {
         "input": "select",
         "options": [
@@ -42,7 +42,6 @@
           "Walls",
           "area 1",
           "area 2",
-          "polis#",
           "prom 1",
           "prom 2",
           "prom 3",
@@ -81,7 +80,7 @@
     },
     {
       "name": "countries",
-      "url": "data/countries-coastline-100m.geo.json"
+      "url": "data/countries-coastline-1km.geo.json"
     },
     {
       "name": "graticule",
@@ -131,7 +130,7 @@
         {
           "type": "formula",
           "as": "pulldown",
-          "expr": "datum.properties[ColorAs] > 0 ? datum.properties[ColorAs] : null"
+          "expr": "datum.properties[Category] > 0 ? datum.properties[Category] : null"
         }
       ]
     }
@@ -147,18 +146,6 @@
     {
       "name": "color",
       "type": "quantize",
-      "domain": [
-        0,
-        20
-      ],
-      "range": {
-        "scheme": "custom",
-        "count": 5
-      }
-    },
-    {
-      "name": "color2",
-      "type": "quantize",
       "domain": {
         "data": "pulldown",
         "field": "pulldown"
@@ -167,20 +154,6 @@
         "scheme": "custom",
         "count": 5
       }
-    },
-    {
-      "name": "xscale",
-      "type": "band",
-      "domain": {"data": "pulldown", "field": "pulldown"},
-      "range": "width",
-      "padding": 0.05,
-      "round": true
-    },
-    {
-      "name": "yscale",
-      "domain": {"data": "pulldown", "field": "pulldown"},
-      "nice": true,
-      "range": "height"
     }
   ],
   "marks": [
@@ -225,7 +198,6 @@
             "signal": "parent.center"
           }
         }
-
       ],
       "marks": [
         {
@@ -264,7 +236,7 @@
                 "value": "#888"
               },
               "fill": {
-                "value": "#fff0b5"
+                "value": "#fdf0bb"
               }
             }
           },
@@ -334,11 +306,17 @@
           "encode": {
             "update": {
               "opacity": {
-                "value": 0.7
+                "value": 0.85
               },
               "fill": {
-                "scale": "color2",
+                "scale": "color",
                 "field": "pulldown"
+              },
+              "tooltip": {
+                "signal": "{'title': datum.properties.Name +':  '+ datum.properties[Category],'Region Name': datum.properties.Region}"
+              },
+              "href": {
+                "signal": "datum.properties.link"
               }
             }
           },
@@ -416,35 +394,21 @@
           }
         }
       ]
-    },
-    {
-      "type": "group",
-      "marks": [
-        {
-          "type": "rect",
-          "encode": {
-            "update": {
-              "x": {"scale": "xscale", "field": "pulldown"},
-              "y": {"scale": "yscale", "field": "pulldown"},
-              "text": {"value": "Graph Block"}
-            }
-          }
-        }
-      ]
     }
   ],
   "legends": [
     {
       "fill": "color",
       "orient": "bottom",
-      "offset": 5,
-      "type": "gradient",
+      "offset": 20,
+      "type": "symbol",
       "gradientLength": 600,
       "gradientThickness": 20,
-      "titlePadding": 10,
-      "titleOrient": "left",
-      "titleAnchor": "end",
-      "direction": "horizontal"
+      "direction": "horizontal",
+      "labelFontSize": 12,
+      "columnPadding": 30,
+      "symbolStrokeWidth": 10,
+      "symbolSize": 750
     }
   ],
   "config": {

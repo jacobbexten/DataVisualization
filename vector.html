@@ -11,11 +11,15 @@
 <body>
 
 <center>
-    <h4>Hypothesis.</h4>
+    <h4>Hypothesis: Number of staseis of high or low degree are related to regions.</h4>
 </center>
 
 <center>
     <div id="polis_vector"></div>
+</center>
+
+<center>
+    <div id="polis_histogram"></div>
 </center>
 
 <center>
@@ -27,18 +31,24 @@
 
 <center>
     <p style="font-size:8px">
-        Data can be found at: <a href=""></a>
+        Data can be found at: https://raw.githubusercontent.com/jacobbexten/jacobbexten.github.io/master/data/<a href="https://raw.githubusercontent.com/jacobbexten/jacobbexten.github.io/master/data/"></a>
     </p>
 </center>
 
 
 <script>
-    vega.scheme('custom', ['#eaac8b', '#e56b6f','#b56576', '#6d597a', '#355070']);
+    vega.scheme('custom', [ '#ce474c','#347a4b', '#ffb311', '#38a4f1', '#815b7b']);
 
     const spec = "polis_vector.vg.json";
     vegaEmbed("#polis_vector", spec)
         .then(result => console.log(result))
         .catch(console.warn);
+
+    const spec_polis_histo = "polis_histogram.vg.json";
+    vegaEmbed("#polis_histogram", spec_polis_histo)
+        .then(result => console.log(result))
+        .catch(console.warn);
+
 </script>
 
 </body>
