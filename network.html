@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@5"></script>
+    <title>A Vega example using a network.</title>
+
+</head>
+
+<body>
+
+<center>
+    <h4></h4>
+</center>
+
+<center>
+    <div id="netowrk" style="padding-bottom: 60px"></div>
+</center>
+
+<center>
+    <p style="font-size: 8px"></p>
+</center>
+<center>
+    <p style="font-size: 8px"></p>
+</center>
+
+<center>
+    <p style="font-size:8px">
+        <a href=""></a>
+    </p>
+</center>
+
+
+<script>
+    vega.scheme('custom', [ '#ce474c','#347a4b', '#ffb311', '#38a4f1', '#815b7b']);
+
+    const spec = "network.vg.json";
+    vegaEmbed("#network", spec)
+        .then(result => console.log(result))
+        .catch(console.warn);
+
+
+</script>
+
+</body>
+</html>

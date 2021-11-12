@@ -11,11 +11,12 @@
 <body>
 
 <center>
-    <h4>Hypothesis: Number of staseis of high or low degree are related to regions.</h4>
+    <h4>Hypothesis: Staseis, whether to a greater or lower degree, are related to regions.</h4>
 </center>
 
+
 <center>
-    <div id="polis_vector"></div>
+    <div id="polis_vector" style="padding-bottom: 60px"></div>
 </center>
 
 <center>
@@ -38,6 +39,7 @@
 
 <script>
     vega.scheme('custom', [ '#ce474c','#347a4b', '#ffb311', '#38a4f1', '#815b7b']);
+
 
     const spec = "polis_vector.vg.json";
     vegaEmbed("#polis_vector", spec)
