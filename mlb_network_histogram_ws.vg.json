@@ -1,0 +1,272 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "",
+  "width": 1300,
+  "height": 200,
+  "padding": 50,
+
+  "data": [
+    {
+      "name": "worldseries",
+      "url": "data/MLB_Wins.csv",
+      "format": {
+        "type": "csv",
+        "WorldSeriesWon": "number"
+      }
+    },
+    {
+      "name": "teams",
+      "url": "data/MLB_Wins.csv",
+      "format": {
+        "type": "csv",
+        "Team": "string",
+        "WorldSeriesWon": "number",
+        "PrimaryColor": "string"
+      }
+    },
+    {
+      "name": "distance",
+      "url": "data/affiliates.csv",
+      "format": {
+        "type": "csv",
+        "Parent": "string",
+        "Distance": "number",
+        "ParentLat": "string",
+        "WorldSeriesWon": "number"
+      },
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["Parent"],
+          "fields": ["Distance"],
+          "ops": ["sum"],
+          "as": ["TotalDistance"]
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "tooltip",
+      "value": {},
+      "on": [
+        {
+          "events": "rect:mouseover",
+          "update": "datum"
+        },
+        {
+          "events": "rect:mouseout",
+          "update": "{}"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {
+        "data": "distance",
+        "field": "Parent",
+        "sort" : {"field": "TotalDistance", "op": "max"}
+      },
+      "range": "width",
+      "padding": 0.05,
+      "round": true
+    },
+    {
+      "name": "yscale",
+      "domain": {
+        "data": "worldseries",
+        "field": "WorldSeriesWon"
+      },
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "name": "y2scale",
+      "domain": {
+        "data": "distance",
+        "field": "TotalDistance"
+      },
+      "range": "height"
+    }
+  ],
+  "title": {
+    "text": "Distance vs. World Series Titles"
+  },
+  "axes": [
+    {
+      "title": "Team",
+      "orient": "bottom",
+      "scale": "xscale",
+      "labelBaseline": "top",
+      "encode": {
+        "labels": {
+          "update": {
+            "align": {"value": "center"}
+          }
+        }
+      }
+    },
+    {
+      "title": "World Series Won",
+      "orient": "left",
+      "scale": "yscale"
+    },
+    {
+      "title": "Aggregate Distance of Farm Teams (miles)",
+      "orient": "right",
+      "scale": "y2scale"
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "teams"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "scale": "xscale",
+            "field": "Team",
+            "offset": 7
+          },
+          "width": {
+            "scale": "xscale",
+            "band": 0.33
+          },
+          "y": {
+            "scale": "yscale",
+            "field": "WorldSeriesWon"
+
+          },
+          "y2": {
+            "scale": "yscale",
+            "value": 0
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "PrimaryColor"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "distance"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "scale": "xscale",
+            "field": "Parent",
+            "offset": 22
+          },
+          "width": {
+            "scale": "xscale",
+            "band": 0.33
+          },
+          "y": {
+            "scale": "y2scale",
+            "field": "TotalDistance"
+
+          },
+          "y2": {
+            "scale": "yscale",
+            "value": 0
+          }
+        },
+        "update": {
+          "fill": {
+            "value": "#BD9B60"
+          },
+          "fillOpacity": {
+            "value": 0.8
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "bottom"
+          },
+          "fill": {
+            "value": "#333"
+          }
+        },
+        "update": {
+          "x": {
+            "scale": "xscale",
+            "signal": "tooltip.Team",
+            "offset": 13.5
+          },
+          "y": {
+            "scale": "yscale",
+            "signal": "tooltip.WorldSeriesWon"
+          },
+          "text": {
+            "signal": "tooltip.WorldSeriesWon"
+          },
+          "fillOpacity": [
+            {
+              "test": "datum === tooltip",
+              "value": 0
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "bottom"
+          },
+          "fill": {
+            "value": "#333"
+          }
+        },
+        "update": {
+          "x": {
+            "scale": "xscale",
+            "signal": "tooltip.Parent",
+            "offset": 20
+          },
+          "y": {
+            "scale": "yscale",
+            "signal": "tooltip.TotalDistance"
+          },
+          "text": {
+            "signal": "tooltip.TotalDistance"
+          },
+          "fillOpacity": [
+            {
+              "test": "datum === tooltip",
+              "value": 0
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

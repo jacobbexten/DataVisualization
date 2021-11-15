@@ -1,0 +1,151 @@
+ID,Name,Latitude,Longitude,League,PrimaryColor,SecondaryColor,Level
+TOL,Toledo Mud Hens,41.5486,-83.6387,300,gray,,AAA
+ARI,Arizona Diamondbacks,33.4453,-112.0667,700,#A71930,#E3D4AD,MLB
+ATL,Atlanta Braves,33.8911,-84.4684,700,#CE1141,#13274F,MLB
+BAL,Baltimore Orioles,39.2839,-76.6216,700,#DF4601,#000000,MLB
+BOS,Boston Red Sox,42.3467,-71.0987,700,#BD3039,#0C2340,MLB
+CHC,Chicago Cubs,41.9477,-87.656,700,#0E3386,#CC3433,MLB
+CWS,Chicago White Sox,41.5,-87.6348,700,#27251F,#C4CED4,MLB
+CIN,Cincinnati Reds,39.0974,-84.5071,700,#C6011F,#000000,MLB
+CLE,Cleveland Indians,41.4962,-81.6852,700,#0C2340,#E31937,MLB
+COL,Colorado Rockies,39.7559,-104.9942,700,#33006F,#C4CED4,MLB
+DET,Detroit Tigers,42.139,-83.0485,700,#0C2340,#FFFFFF,MLB
+HOU,Houston Astros,29.7573,-95.3555,700,#002D62,#EB6E1F,MLB
+KAN,Kansas City Royals,39.0517,-94.4803,700,#004687,#BD9B60,MLB
+LAA,Los Angeles Angels of Anaheim,33.8003,-117.8827,700,#BA0021,#003263,MLB
+LAD,Los Angeles Dodgers,34.0739,-118.24,700,#005A9C,#FFFFFF,MLB
+MIA,Miami Marlins,25.7781,-80.2196,700,#00A3E0,#EF3340,MLB
+MIL,Milwaukee Brewers,43.028,-87.9712,700,#12284B,#FFC52F,MLB
+MIN,Minnesota Twins,44.9817,-93.2776,700,#002B5C,#D31145,MLB
+NYM,New York Mets,40.3571,-73.8458,700,#002D72,#FF5910,MLB
+NYY,New York Yankees,40.8296,-73.9262,700,#0C2340,#FFFFFF,MLB
+OAK,Oakland Athletics,37.7516,-121.8015,700,#003831,#EFB21E,MLB
+PHI,Philadelphia Phillies,39.9061,-75.1665,700,#E81828,#002D72,MLB
+PIT,Pittsburgh Pirates,40.4469,-80.0057,700,#27251F,#FDB827,MLB
+SD,San Diego Padres,32.7073,-117.1567,700,#2F241D,#FFC425,MLB
+SF,San Francisco Giants,37.7786,-122.3893,700,#FD5A1E,#27251F,MLB
+SEA,Seattle Mariners,47.5914,-122.3325,700,#0C2C56,#005C5C,MLB
+STL,St. Louis Cardinals,38.6226,-90.1928,700,#C41E3A,#0C2340,MLB
+TB,Tampa Bay Rays,27.7682,-82.6534,700,#092C5C,#8FBCE6,MLB
+TEX,Texas Rangers,32.751,-97.083,700,#003278,#C0111F,MLB
+TOR,Toronto Blue Jays,43.6418,-79.3891,700,#134A8E,#1D2D5C,MLB
+WAS,Washington Nationals,38.873,-77.0074,700,#AB0003,#14225A,MLB
+NOR,Norfolk Tides,36.8431,-76.2793,300,gray,,AAA
+WOR,Worcester Red Sox,42.2575,-71.8005,300,gray,,AAA
+SWB,Scranton/Wilkes-Barre RailRiders,41.2247,-75.136,300,gray,,AAA
+DUR,Durham Bulls,35.9917,-78.9041,300,gray,,AAA
+BUF,Buffalo Bisons,42.8804,-78.8738,300,gray,,AAA
+CHA,Charlotte Knights,35.2284,-80.8487,300,gray,,AAA
+CMB,Columbus Clippers,40.0016,-83.0197,300,gray,,AAA
+OMA,Omaha Storm Chasers,41.2565,-95.9345,300,gray,,AAA
+STP,St. Paul Saints,44.9508,-93.084,300,gray,,AAA
+SUG,Sugar Land Skeeters,29.6224,-95.6473,300,gray,,AAA
+SLT,Salt Lake Bees,40.7406,-111.8927,300,gray,,AAA
+LV,Las Vegas Aviators,36.0907,-115.183952,300,gray,,AAA
+TAC,Tacoma Rainiers,47.238,-122.4976,300,gray,,AAA
+RND,Round Rock Express,30.5277,-97.6301,300,gray,,AAA
+GWI,Gwinnett Stripers,34.0405,-83.9923,300,gray,,AAA
+JAC,Jacksonville Jumbo Shrimp,30.3246,-81.6437,300,gray,,AAA
+SYR,Syracuse Mets,43.0792,-76.1654,300,gray,,AAA
+LEH,Lehigh Valley IronPigs,40.6259,-75.4526,300,gray,,AAA
+ROC,Rochester Red Wings,43.1875,-77.6109,300,gray,,AAA
+IOW,Iowa Cubs,41.878,-93.0977,300,gray,,AAA
+LOU,Louisville Bats,38.2556,-85.7442,300,gray,,AAA
+NSH,Nashville Sounds,36.1437,-86.7739,300,gray,,AAA
+IND,Indianapolis Indians,39.7648,-86.1684,300,gray,,AAA
+MEM,Memphis Redbirds,35.1427,-90.05,300,gray,,AAA
+REN,Reno Aces,39.5288,-119.8077,300,gray,,AAA
+ALB,Albuquerque Isotopes,35.07,-106.6289,300,gray,,AAA
+OKC,Oklahoma City Dodgers,35.4652,-97.5078,300,gray,,AAA
+ELP,El Paso Chihuahuas,31.7584,-106.4932,300,gray,,AAA
+SAC,Sacremento River Cats,38.5805,-121.5135,300,gray,,AAA
+AMA,Amarillo Sod Poodles,35.222,-101.8313,100,gray,,AA
+ARK,Arkansas Travelers,34.7555,-92.2726,100,gray,,AA
+CC,Corpus Christi Hooks,27.8006,-97.3964,100,gray,,AA
+FSC,Frisco RoughRiders,33.1507,-96.8236,100,gray,,AA
+MID,Midland RockHounds,31.9973,-102.0779,100,gray,,AA
+NWA,Northwest Arkansas Naturals,36.1599,-94.1944,100,gray,,AA
+SA,San Antonio Missions,29.4241,-98.4936,100,gray,,AA
+SPR,Springfield Cardinals,37.2109,-93.28,100,gray,,AA
+TUL,Tulsa Drillers,36.154,-95.9928,100,gray,,AA
+WCH,Wichita Wind Surge,37.6872,-97.3301,100,gray,,AA
+AKR,Akron RubberDucks,41.0814,-81.519,100,gray,,AA
+ALT,Altoona Curve,40.5187,-78.3947,100,gray,,AA
+BNH,Binghamton Rumble Ponies,42.0987,-75.918,100,gray,,AA
+BOW,Bowie Baysox,39.0068,-76.7791,100,gray,,AA
+ERI,Erie SeaWolves,42.1274,-80.0809,100,gray,,AA
+HAR,Harrisburg Senators,40.2561,-76.8898,100,gray,,AA
+HRT,Hartford Yard Goats,41.7713,-72.6745,100,gray,,AA
+NH,New Hampshire Fisher Cats,42.9813,-71.4663,100,gray,,AA
+POR,Portland Sea Dogs,43.6591,-70.2568,100,gray,,AA
+REA,Reading Fightin Phils,40.3648,-75.9344,100,gray,,AA
+RCH,Richmond Flying Squirrels,37.572,-77.4643,100,gray,,AA
+SOM,Somerset Patriots,40.5608,-74.5533,100,gray,,AA
+BIL,Biloxi Shuckers,30.396,-88.8853,100,gray,,AA
+BIR,Birmingham Barons,33.5075,-86.8105,100,gray,,AA
+CHT,Chattanooga Lookouts,35.0456,-85.3097,100,gray,,AA
+MIS,Mississippi Braves,32.2608,-90.5269,100,gray,,AA
+MON,Montgomery Biscuits,32.3792,-86.3077,100,gray,,AA
+PEN,Pensacola Blue Wahoos,30.4213,-87.2169,100,gray,,AA
+RC,Rocket City Trash Pandas,34.6993,-86.7483,100,gray,,AA
+TEN,Tennessee Smokies,35.9889,-83.6046,100,gray,,AA
+BEL,Beloit Snappers,42.5083,-89.0318,50,gray,,A
+CED,Cedar Rapids Kernels,41.9779,-91.6656,50,gray,,A
+DAY,Dayton Dragons,39.7645,-84.1863,50,gray,,A
+FW,Fort Wayne TinCaps,41.0793,-85.1394,50,gray,,A
+GL,Great Lakes Loons,43.6093,-84.238,50,gray,,A
+LC,Lake County Captains,41.6404,-81.4366,50,gray,,A
+LAN,Lansing Lugnuts,42.7325,-84.5555,50,gray,,A
+PEO,Peoria Chiefs,40.6936,-89.589,50,gray,,A
+QC,Quad Cities River Bandits,41.519,-90.5827,50,gray,,A
+SB,South Bend Cubs,41.6699,-86.256,50,gray,,A
+WM,West Michigan Whitecaps,43.0414,-85.6587,50,gray,,A
+WIS,Wisconsin Timber Rattlers,44.2828,-88.469,50,gray,,A
+ABE,Aberdeen IronBirds,39.5307,-76.1869,50,gray,,A
+ASH,Asheville Tourists,35.5951,-82.5515,50,gray,,A
+BG,Bowling Green Hot Rods,36.9685,-86.4808,50,gray,,A
+BRO,Brooklyn Cyclones,40.6782,-73.9442,50,gray,,A
+GRE,Greensboro Grasshoppers,36.0726,-79.792,50,gray,,A
+GRV,Greenville Drive,,,50,gray,,A
+HIK,Hickory Crawdads,35.7485,-81.379,50,gray,,A
+HUD,Hudson Valley Renegades,41.5279,-73.9616,50,gray,,A
+JS,Jersey Shore BlueClaws,39.9653,-74.3118,50,gray,,A
+ROM,Rome Braves,34.257,-85.1647,50,gray,,A
+WIL,Wilmington Blue Rocks,34.2104,-77.8868,50,gray,,A
+WS,Winston-Salem Dash,36.0999,-80.2442,50,gray,,A
+EUG,Eugene Emeralds,44.0596,-123.0664,50,gray,,A
+EVE,Everett AquaSox,47.9672,-122.2015,50,gray,,A
+HIL,Hillsboro Hops,45.5228,-122.9898,50,gray,,A
+SPO,Spokane Indians,47.6588,-117.426,50,gray,,A
+TC,Tri-City Dust Devils,46.2305,-119.0922,50,gray,,A
+VAN,Vancouver Canadians,49.2827,-123.1207,50,gray,,A
+AUG,Augusta GreenJackets,33.4947,-82.0022,50,gray,,Low A
+CAR,Carolina Mudcats,35.8166,-78.2707,50,gray,,Low A
+CHN,Charleston RiverDogs,32.7765,-79.9309,50,gray,,Low A
+CBA,Columbia Fireflies,34.0186,-81.0319,50,gray,,Low A
+DLM,Delmarva Shorebirds,38.5827,-75.5277,50,gray,,Low A
+DEW,Down East Wood Ducks,35.2627,-77.5816,50,gray,,Low A
+FAY,Fayatteville Woodpeckers,35.0553,-78.884,50,gray,,Low A
+FRE,Fredericksburg Nationals,38.3174,-77.5089,50,gray,,Low A
+KNP,Kannapolis Cannon Ballers,35.4874,-80.6217,50,gray,,Low A
+LYN,Lynchburg Hillcats,37.3922,-79.1657,50,gray,,Low A
+MYR,Myrtle Beach Pelicans,33.6891,-78.8867,50,gray,,Low A
+SAL,Salem Red Sox,42.5195,-70.8967,50,gray,,Low A
+BRA,Bradenton Marauders,27.4989,-82.5748,50,gray,,Low A
+CLR,Clearwater Threshers,27.9709,-82.7317,50,gray,,Low A
+DYT,Daytona Tortugas,29.2108,-81.0228,50,gray,,Low A
+DUN,Dunedin Blue Jays,28.0041,-82.7873,50,gray,,Low A
+FM,Fort Myers Mighty Mussels,26.6406,-81.8723,50,gray,,Low A
+JUP,Jupiter Hammerheads,26.9342,-80.0942,50,gray,,Low A
+LKL,Lakeland Flying Tigers,28.0395,-81.9498,50,gray,,Low A
+PB,Palm Beach Cardinals,26.7056,-80.0364,50,gray,,Low A
+SL,St. Lucie Mets,27.4992,-80.3422,50,gray,,Low A
+TAM,Tampa Tarpons,27.9506,-82.4572,50,gray,,Low A
+FRN,Fresno Grizzlies,36.7378,-119.7871,50,gray,,Low A
+IE,Inland Empire 66ers,34.9592,-116.4194,50,gray,,Low A
+LE,Lake Elsinore Storm,33.6681,-117.3273,50,gray,,Low A
+MOD,Modesto Nuts,37.6393,-120.997,50,gray,,Low A
+RCM,Rancho Cucamonga Quakes,34.1064,-117.5931,50,gray,,Low A
+SJ,San Jose Giants,37.3382,-121.8863,50,gray,,Low A
+STK,Stockton Ports,37.9577,-121.2908,50,gray,,Low A
+VIS,Visalia Rawhide,36.3302,-119.2921,50,gray,,Low A

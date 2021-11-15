@@ -1,0 +1,204 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 1400,
+  "height": 850,
+  "background": "#f2f1ed",
+  "padding": {"top": 0, "left": 0, "right": 0, "bottom": 0},
+  "autosize": "none",
+
+  "data": [
+    {
+      "name": "states",
+      "url": "data/us.json",
+      "format": {"type": "topojson", "feature": "states"},
+      "transform": [
+        {
+          "type": "geopath",
+          "projection": "projection"
+        }
+      ]
+    },
+    {
+      "name": "teams",
+      "url": "data/MLB.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["Longitude", "Latitude"]
+        },
+        {
+          "type": "voronoi", "x": "x", "y": "y"
+        },
+        {
+          "type": "collect", "sort": {
+            "field": "Names",
+            "order": "ascending"
+          }
+        }
+      ]
+    },
+    {
+      "name": "affiliates",
+      "url": "data/affiliates.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "hover && hover.ID == datum.Parent"
+        },
+        {
+          "type": "lookup",
+          "from": "teams", "key": "ID",
+          "fields": ["Parent", "Child"], "as": ["source", "target"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.source && datum.target"
+        },
+        {
+          "type": "linkpath",
+          "shape": "line"
+        }
+      ]
+    }
+  ],
+
+  "signals": [
+    { "name": "tx", "update": "width / 2" },
+    { "name": "ty", "update": "height / 2" },
+    {
+      "name": "hover",
+      "value": null,
+      "on": [
+        {"events": "@cell:mouseover", "update": "datum"},
+        {"events": "@cell:mouseout", "update": "null"}
+      ]
+    },
+    {
+      "name": "title",
+      "value": null,
+      "update": "hover ? hover.Name + ' - ' + hover.Level: ''"
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "size",
+      "type": "linear",
+      "domain": {"data": "teams", "field": "League"},
+      "range": [0, 700]
+    }
+  ],
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": "albersUsa",
+      "scale": 1600,
+      "center": [40,80],
+      "translate": [{"signal": "tx"}, {"signal": "ty"}]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "path",
+      "from": {"data": "states"},
+      "encode": {
+        "enter": {
+          "fill": {"value": "#dedede"},
+          "stroke": {"value": "darkgray"}
+        },
+        "update": {
+          "path": {"field": "path"}
+        }
+      }
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "teams"},
+      "encode": {
+        "enter": {
+          "size": {"scale": "size", "field": "League"},
+          "fill": {"field": "PrimaryColor"},
+          "fillOpacity": {"value": 0.8},
+          "strokeWidth": {"value": 2.5},
+          "stroke": {"field": "SecondaryColor"},
+          "blend": "hard-light"
+        },
+        "update": {
+          "x": {"field": "x"},
+          "y": {"field": "y"}
+        }
+      }
+    },
+    {
+      "type": "path",
+      "name": "cell",
+      "from": {"data": "teams"},
+      "encode": {
+        "enter": {
+          "fill": {"value": "transparent"}
+        },
+        "update": {
+          "path": {"field": "path"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {"signal": "width / 2", "offset": -5},
+          "y": {"signal": "height - 20"},
+          "fill": {"value": "black"},
+          "fontSize": {"value": 40},
+          "align": {"value": "center"}
+        },
+        "update": {
+          "text": {"signal": "title"}
+        }
+      }
+    },
+    {
+      "type": "path",
+      "interactive": false,
+      "from": {"data": "affiliates"},
+      "encode": {
+        "enter": {
+          "path": {"field": "path"},
+          "stroke": {"value": "black"},
+          "strokeOpacity": {"value": 0.5},
+          "strokeWidth": {"value": 5}
+        },
+        "update": {
+          "path": {"field": "path"}
+        }
+      }
+    }
+
+  ],
+  "legends": [
+    {
+      "title": "Legend",
+      "size": "size",
+      "orient": "left",
+      "type": "symbol",
+      "symbolFillColor": "gray",
+      "symbolStrokeWidth": 1,
+      "direction": "vertical",
+      "tickCount": 4,
+      "tickMinStep": 50
+    }
+  ],
+  "config": {
+    "legend": {
+      "layout": {
+        "anchor": "left"
+      }
+    }
+  }
+}

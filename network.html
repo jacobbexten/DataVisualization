@@ -11,12 +11,21 @@
 <body>
 
 <center>
-    <h4></h4>
+    <h4>Major Leauge Baseball teams have greater success with nearby Minor League teams</h4>
 </center>
 
 <center>
-    <div id="netowrk" style="padding-bottom: 60px"></div>
+    <div id="network"></div>
 </center>
+
+<center>
+    <div id="network_histogram"></div>
+</center>
+
+<center>
+    <div id="network_histogram2"></div>
+</center>
+
 
 <center>
     <p style="font-size: 8px"></p>
@@ -27,19 +36,27 @@
 
 <center>
     <p style="font-size:8px">
-        <a href=""></a>
+        Data can be found at: https://raw.githubusercontent.com/jacobbexten/jacobbexten.github.io/master/data/<a href="https://raw.githubusercontent.com/jacobbexten/jacobbexten.github.io/master/data/"></a>
     </p>
 </center>
 
 
 <script>
-    vega.scheme('custom', [ '#ce474c','#347a4b', '#ffb311', '#38a4f1', '#815b7b']);
 
-    const spec = "network.vg.json";
+    const spec = "mlb_network.vg.json";
     vegaEmbed("#network", spec)
         .then(result => console.log(result))
         .catch(console.warn);
 
+    const spec2 = "mlb_network_histogram_ws.vg.json";
+    vegaEmbed("#network_histogram", spec2)
+        .then(result => console.log(result))
+        .catch(console.warn);
+
+    const spec3 = "mlb_network_histogram_wins.vg.json";
+    vegaEmbed("#network_histogram2", spec3)
+        .then(result => console.log(result))
+        .catch(console.warn);
 
 </script>
 
